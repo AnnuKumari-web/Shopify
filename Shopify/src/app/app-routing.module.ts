@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './navbar/home/home.component';
-import { ProductListComponent } from './Product/product-list/product-list.component'
-import { ProductDetailComponent } from './Product/product-detail/product-detail.component';
+import { ProductListComponent } from './features/product-list/product-list.component'
+import { CartPageComponent } from './features/cart-page/cart-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'products', component: ProductListComponent},
-  { path: 'product-detail', component: ProductDetailComponent},
-  { path: 'more', component: ProductDetailComponent}
+  // { path: '', component: HomeComponent },
+  // change later on with welcome page
+  {
+    path:'', redirectTo:'products', pathMatch:'full'
+  },
+  {
+    path: 'products', component: ProductListComponent
+  },
+  {
+    path: 'cart', component: CartPageComponent
+  }
 ];
 
 @NgModule({
