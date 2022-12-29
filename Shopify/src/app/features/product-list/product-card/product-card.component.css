@@ -13,3 +13,10 @@
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
 }
+a {
+    color: blue;
+    text-decoration: underline;
+}
+a:hover {
+    color: skyblue;
+}

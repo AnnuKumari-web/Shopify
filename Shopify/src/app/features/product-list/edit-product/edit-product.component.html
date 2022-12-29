@@ -1,0 +1,72 @@
+<div class="container my-5">
+    <strong class="mb-3">Edit Product</strong>
+    <br>
+  <br>
+    <div class="row">
+      <div class="col-6">
+          <form #form="ngForm" (ngSubmit)="updateProduct()">
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="id" readonly name="id" [(ngModel)]="productDetails.id"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title" name="title" [(ngModel)]="productDetails.title"
+                />
+              </div>
+              <div class="mb-3">
+                  <label for="price" class="form-label">Price</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    name="price"
+                  [(ngModel)]="productDetails.price"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                 [(ngModel)]="productDetails.description"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="category"
+                    name="category"
+                  [(ngModel)]="productDetails.category"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label">Image Url</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="image"
+                    name="image"
+                  [(ngModel)]="productDetails.image"
+                  />
+                </div>
+              <button style = "background-color: blue;" type="submit" class="btn btn-primary mr-5">Save Changes</button>
+              <button style = "background-color: red;" type="button" class="btn btn-danger" 
+              (click)="deleteProduct(productDetails.id)">Delete</button>
+            </form>
+      </div>
+    </div>
+    
+  </div>
+  

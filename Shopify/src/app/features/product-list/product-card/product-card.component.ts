@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../../cart.service';
+import { SearchInputService } from 'src/app/shared/services/search-input.service';
 
 @Component({
   selector: 'app-product-card',
@@ -8,7 +9,9 @@ import { CartService } from '../../cart.service';
 })
 export class ProductCardComponent implements OnInit {
   @Input() products:any;
-  constructor(private cartService: CartService) { }
+  color='#73C2FB';
+  searchText: string='';
+  constructor(private cartService: CartService,private inputService: SearchInputService) { }
 
   ngOnInit(): void {
     this.products?.forEach((a: any) => {
@@ -19,4 +22,11 @@ export class ProductCardComponent implements OnInit {
   addToCart(item: any){
     this.cartService.addToCart(item);
   }
+
+  onSearchTextEntered(searchValue: string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
+  }
+
+  
 }

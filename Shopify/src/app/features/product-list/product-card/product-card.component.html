@@ -1,15 +1,57 @@
-<div class="container">
-    <div class="row">
-        <ng-container *ngFor="let item of products">
-                <div class="card col-md-3">
-                    <img src="{{item.image}}" alt="image">
-                    <strong style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</strong>
-                    <p style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-                    <p><strong>Price: </strong>Rs {{item.price}}/-</p>
-                    <button class="btn btn-primary" (click)="addToCart(item)">Add to Cart</button>
-                </div>
-        </ng-container>
+<!-- <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="search-hero ">
+      <input
+        type="text"
+        class="form-control"
+        name="search"
+        [(ngModel)]="searchText"
+        placeholder="Search by title "
+      />
     </div>
+  </div>
 </div>
 
- 
+<div class="container">
+  <div class="row" *ngIf="products && products.length > 0">
+    <ng-container *ngFor="let item of products | filter: searchText" >
+      <div appCustomStyle class="card col-md-3">
+        <img src="{{ item.image }}" alt="image" />
+        <strong
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+          >{{ item.title }}</strong
+        >
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.description }}
+        </p>
+        <p><strong>Price: </strong>{{ item.price | priceFormat : "USD" }}</p>
+        <button class="btn btn-primary" (click)="addToCart(item)">
+          Add to Cart
+        </button>
+        <a [routerLink]="['/products', 'edit-product', item.id]">View/Edit</a>
+      </div>
+    </ng-container>
+  </div>
+  <div>
+    <p *ngIf="!products || products.length <= 0">
+      <br />
+      <br />
+      <strong>Loading...</strong>
+      No Products to Display...
+    </p>
+  </div>
+</div>

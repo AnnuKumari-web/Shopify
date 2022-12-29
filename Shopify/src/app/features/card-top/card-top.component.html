@@ -1,12 +1,13 @@
 <div class="card-top container-fluid">
+  <br>
     <div class="container d-flex">
       <div class="item">
-        <a>
-          <img src="/assets/Products.png" alt="All products" />
-          <h6>All products</h6>
+        <a routerLink="/products">
+          <img style="width:64px;" src="/assets/Products.png" alt="All products" />
+          <strong>All products</strong>
         </a>
       </div>
-      <div class="item">
+      <!-- <div class="item">
         <a>
           <img src="/assets/Electronics.png" alt="Electronics" />
           <h6>Electronics</h6>
@@ -22,6 +23,18 @@
           <a>
             <img style="width:88px;" src="/assets/Jewellery.png" alt="Jewellery" />
             <h6>Jewellery</h6>
+          </a>
+        </div> -->
+        <div class="item">
+          <a routerLink="/products/add-product">
+            <img style="width:74px;" src="/assets/AddProduct.png" alt="AddProduct" />
+            <strong>Add Product</strong>
+          </a>
+        </div>
+        <div class="item">
+          <a routerLink="/products/edit-product/8e01077f-67f2-4add-b4e5-4413ff4b2aa5">
+            <img style="width:64px;" src="/assets/EditProduct.png" alt="EditProduct" />
+            <strong>Edit Product</strong>
           </a>
         </div>
     </div>
