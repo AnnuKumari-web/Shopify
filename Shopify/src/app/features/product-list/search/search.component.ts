@@ -8,11 +8,12 @@ import { SearchInputService } from 'src/app/shared/services/search-input.service
 })
 export class SearchComponent implements OnInit {
   enteredSearchValue: string = '';
+  enteredText: string="";
 
   @Output()
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private searchInputService: SearchInputService) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +22,8 @@ export class SearchComponent implements OnInit {
     this.searchTextChanged.emit(this.enteredSearchValue);
   }
 
+  onClick(){
+    console.log(this.enteredText);
+    this.searchInputService.raiseDataEmitterEvent(this.enteredText);
+  }
 }

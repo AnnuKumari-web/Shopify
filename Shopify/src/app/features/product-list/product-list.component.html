@@ -1,2 +1,31 @@
 <app-card-top></app-card-top>
-<app-product-card [products]="productList"></app-product-card>
+<!-- <app-product-card [products]="productList"></app-product-card> -->
+<!-- <div class="container mt-3">
+    <div class="row">
+      <div class="search-hero ">
+        <input
+          type="text"
+          class="form-control"
+          name="search"
+          [(ngModel)]="searchText"
+          placeholder="Search by title "
+        />
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="container">
+    <div class="d-flex flex-row flex-wrap" *ngIf="productList && productList.length > 0">
+      <ng-container *ngFor="let item of productList | filter: inputText" >
+        <app-product-card [product]="item"></app-product-card>
+      </ng-container>
+    </div>
+    <div>
+      <p *ngIf="!productList || productList.length <= 0">
+        <br />
+        <br />
+        <strong>Loading...</strong>
+        No Products to Display...
+      </p>
+    </div>
+  </div>

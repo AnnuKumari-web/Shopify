@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductListService } from '../Services/product-list.service';
-import { Product } from '../models/product.model';
+
 
 @Component({
   selector: 'app-edit-product',

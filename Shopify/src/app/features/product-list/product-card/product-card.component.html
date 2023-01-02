@@ -1,6 +1,6 @@
 <!-- <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
 
-<div class="container mt-3">
+<!-- <div class="container mt-3">
   <div class="row">
     <div class="search-hero ">
       <input
@@ -54,4 +54,32 @@
       No Products to Display...
     </p>
   </div>
+</div> -->
+
+<div appCustomStyle class="card col-md-3" style="width: 18rem;">
+  <img src="{{ product.image }}" alt="image" />
+  <strong
+    style="
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100ch;
+    "
+    >{{ product.title }}</strong
+  >
+  <p
+    style="
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100ch;
+    "
+  >
+    {{ product.description }}
+  </p>
+  <p><strong>Price: </strong>{{ product.price | priceFormat : "USD" }}</p>
+  <button class="btn btn-primary" (click)="addToCart(product)">
+    Add to Cart
+  </button>
+  <a [routerLink]="['/products', 'edit-product', product.id]">View/Edit</a>
 </div>

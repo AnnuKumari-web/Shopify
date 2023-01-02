@@ -26,16 +26,108 @@
           </a>
         </div> -->
         <div class="item">
-          <a routerLink="/products/add-product">
+          <a (click)="openAddOrUpdateModal('0')">
+          <!-- <a routerLink="/products/add-product" (click)="openAddOrUpdateModal('0')"> -->
             <img style="width:74px;" src="/assets/AddProduct.png" alt="AddProduct" />
             <strong>Add Product</strong>
+            <!-- <button
+          type="button"
+          style="background-color: skyblue;color: black;"
+          class="btn btn-primary"
+          (click)="openAddOrUpdateModal(0)"
+        >
+          Add New Product
+        </button> -->
           </a>
         </div>
+
         <div class="item">
-          <a routerLink="/products/edit-product/8e01077f-67f2-4add-b4e5-4413ff4b2aa5">
+          <a (click)="openAddOrUpdateModal('8e01077f-67f2-4add-b4e5-4413ff4b2aa5')">
+          <!-- <a routerLink="/products/edit-product/8e01077f-67f2-4add-b4e5-4413ff4b2aa5"> -->
             <img style="width:64px;" src="/assets/EditProduct.png" alt="EditProduct" />
             <strong>Edit Product</strong>
           </a>
         </div>
+    </div>
+  </div>
+
+
+
+  <!-- modal -->
+  <div class="modal fade" id="addORUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{addORUpdateModalTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input
+              [ngClass] = "addORUpdateModalTitle=='Add Product'? 'hidden' : 'appear'"
+              class="form-control"
+              id="id" readonly name="id" [(ngModel)]="productForm.id"
+            />
+            <!-- <input
+              type="hidden"
+              class="form-control"
+              id="id" readonly name="id" [(ngModel)]="productForm.id"
+            /> -->
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title" name="title" [(ngModel)]="productForm.title"
+            />
+          </div>
+          <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                name="price"
+                [(ngModel)]="productForm.price"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"
+                [(ngModel)]="productForm.description"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <input
+                type="text"
+                class="form-control"
+                id="category"
+                name="category"
+                [(ngModel)]="productForm.category"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image Url</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                name="image"
+                [(ngModel)]="productForm.image"
+              />
+            </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" style="background-color: grey;color: black;" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" style="background-color: skyblue;color: black;" class="btn btn-primary" (click)="createOrUpdate()">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>

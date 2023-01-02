@@ -1,21 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SearchInputService {
-  private inputVar: string='';
+  dataEmitter = new EventEmitter<string>();
 
-  onSearchChange = new EventEmitter();
-
-  constructor() {
-  }
-
-  getInputVar() {
-    return this.inputVar;
-  }
-
-  setInputVar(data: string) {
-    this.inputVar = data;
+  constructor() {}
+  raiseDataEmitterEvent(data: string) {
+    this.dataEmitter.emit(data);
   }
 }
