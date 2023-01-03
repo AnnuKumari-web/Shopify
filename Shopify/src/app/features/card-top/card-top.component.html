@@ -7,43 +7,15 @@
           <strong>All products</strong>
         </a>
       </div>
-      <!-- <div class="item">
-        <a>
-          <img src="/assets/Electronics.png" alt="Electronics" />
-          <h6>Electronics</h6>
-        </a>
-      </div>
-      <div class="item">
-        <a>
-          <img src="/assets/Fashion.png" alt="Fashion" />
-          <h6>Fashion</h6>
-        </a>
-      </div>
-      <div class="item">
-          <a>
-            <img style="width:88px;" src="/assets/Jewellery.png" alt="Jewellery" />
-            <h6>Jewellery</h6>
-          </a>
-        </div> -->
         <div class="item">
           <a (click)="openAddOrUpdateModal('0')">
-          <!-- <a routerLink="/products/add-product" (click)="openAddOrUpdateModal('0')"> -->
             <img style="width:74px;" src="/assets/AddProduct.png" alt="AddProduct" />
             <strong>Add Product</strong>
-            <!-- <button
-          type="button"
-          style="background-color: skyblue;color: black;"
-          class="btn btn-primary"
-          (click)="openAddOrUpdateModal(0)"
-        >
-          Add New Product
-        </button> -->
           </a>
         </div>
 
         <div class="item">
           <a (click)="openAddOrUpdateModal('8e01077f-67f2-4add-b4e5-4413ff4b2aa5')">
-          <!-- <a routerLink="/products/edit-product/8e01077f-67f2-4add-b4e5-4413ff4b2aa5"> -->
             <img style="width:64px;" src="/assets/EditProduct.png" alt="EditProduct" />
             <strong>Edit Product</strong>
           </a>
@@ -69,11 +41,6 @@
               class="form-control"
               id="id" readonly name="id" [(ngModel)]="productForm.id"
             />
-            <!-- <input
-              type="hidden"
-              class="form-control"
-              id="id" readonly name="id" [(ngModel)]="productForm.id"
-            /> -->
           </div>
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>

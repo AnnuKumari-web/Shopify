@@ -11,7 +11,6 @@ import { SearchInputService } from 'src/app/shared/services/search-input.service
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
   filteredList: Product[] = [];
-  // searchText: string='';
   inputText: string='';
 
   constructor(private productListService: ProductListService,private searchInputService: SearchInputService) {}

@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './features/product-list/product-list.component'
 import { CartPageComponent } from './features/cart-page/cart-page.component';
 import { HomeComponent } from './core/home/home.component';
-import { AddProductComponent } from './features/product-list/add-product/add-product.component';
-import { EditProductComponent } from './features/product-list/edit-product/edit-product.component';
+import { EditProductComponent } from './module/edit-product/edit-product.component';
 
 const routes: Routes = [
   {
@@ -12,9 +11,6 @@ const routes: Routes = [
   },
   {
     path: 'products', component: ProductListComponent
-  },
-  {
-    path: 'products/add-product', component: AddProductComponent
   },
   {
     path: 'products/edit-product/:id', component: EditProductComponent

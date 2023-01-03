@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product.model';
+import { Product } from '../../features/product-list/models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductListService } from '../Services/product-list.service';
+import { ProductListService } from '../../features/product-list/Services/product-list.service';
 
 
 @Component({
@@ -51,6 +51,7 @@ export class EditProductComponent implements OnInit {
   }
 
   deleteProduct(id: string) {
+    alert('Do you want this product to get deleted?');
     this._productListService.deleteProduct(id).subscribe({
       next: (response) => {
         this.router.navigate(['/products']);

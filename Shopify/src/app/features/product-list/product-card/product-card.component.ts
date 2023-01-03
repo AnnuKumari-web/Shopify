@@ -10,14 +10,13 @@ import { Product } from '../models/product.model';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!:Product;
-  color='#73C2FB';
+  color1='#73C2FB';
+  color2='#FFFFFF';
+  border='2px solid #1F75FE';
   searchText: string='';
   constructor(private cartService: CartService,private inputService: SearchInputService) { }
 
   ngOnInit(): void {
-    // this.products?.forEach((a: any) => {
-    //   Object.assign(a,{quantity:1,total:a.price});
-    // });
   }
 
   addToCart(item: any){
@@ -29,5 +28,4 @@ export class ProductCardComponent implements OnInit {
     console.log(this.searchText);
   }
 
-  
 }
