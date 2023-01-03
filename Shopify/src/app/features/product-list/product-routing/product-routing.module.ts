@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductListComponent } from '../product-list.component';
 import { CartPageComponent } from '../../cart-page/cart-page.component';
-import { Routes } from '@angular/router';
-import { ProductListComponent } from '../../product-list/product-list.component';
+import { EditProductComponent } from 'src/app/module/edit-product/edit-product.component';
 
-// const routes: Routes = [
-//   {
-//     path:'', redirectTo:'products', pathMatch:'full'
-//   },
-//   {
-//     path: 'products', component: ProductListComponent
-//   },
-//   {
-//     path: 'cart', component: CartComponent
-//   }
-// ]
+const productRoutes: Routes = [
+  {
+    path: '', component: ProductListComponent
+  },
+  {
+    path: 'products/edit-product/:id', component: EditProductComponent
+  },
+  {
+    path: 'cart', component: CartPageComponent
+  }
+]
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(productRoutes)],
+  exports: [RouterModule]
 })
 export class ProductRoutingModule { }

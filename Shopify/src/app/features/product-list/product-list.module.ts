@@ -1,28 +1,21 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { EditProductComponent } from './edit-product/edit-product.component';
-// import { ProductCardComponent } from './product-card/product-card.component';
-// import { ProductListComponent } from './product-list.component';
-// import { FormsModule } from '@angular/forms';
-// import { RouterModule } from '@angular/router';
-// import { SharedModule } from 'src/app/shared/shared.module';
+import { NgModule } from '@angular/core';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductListComponent } from './product-list.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-// @NgModule({
-//   declarations: [
-//     EditProductComponent,
-//     ProductCardComponent,
-//     ProductListComponent,
-//   ],
-//   imports: [
-//     CommonModule,
-//     FormsModule,
-//     RouterModule, 
-//     SharedModule,
-//   ],
-//   exports: [
-//     EditProductComponent,
-//     ProductCardComponent,
-//     ProductListComponent,
-//   ]
-// })
-// export class ProductListModule { }
+@NgModule({
+  declarations: [
+    ProductCardComponent,
+    ProductListComponent,
+  ],
+  imports: [
+    Ng2SearchPipeModule,
+    SharedModule,
+  ],
+  exports: [
+    ProductCardComponent,
+    ProductListComponent,
+  ]
+})
+export class ProductListModule { }

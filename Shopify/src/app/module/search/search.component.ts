@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
 
   onSearchTextChanged(){
     this.searchTextChanged.emit(this.enteredSearchValue);
+    this.searchInputService.raiseDataEmitterEvent(this.enteredText);
   }
 
   onClick(){
