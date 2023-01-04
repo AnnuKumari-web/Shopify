@@ -19,9 +19,9 @@
   >
     {{ product.description }}
   </p>
-  <p><strong>Price: </strong>{{ product.price | priceFormat : "USD" }}</p>
+  <p><strong>{{constant.price}}: </strong>{{ product.price | priceFormat : "USD" }}</p>
   <button class="btn btn-primary" (click)="addToCart(product)">
-    Add to Cart
+  {{constant.addToCart}}
   </button>
-  <a [routerLink]="['/products', 'edit-product', product.id]">View/Edit</a>
+  <a [routerLink]="['/products', 'edit-product', product.id]">{{constant.viewOrEdit}}</a>
 </div>

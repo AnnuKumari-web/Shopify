@@ -10,8 +10,7 @@ import { ProductManageFormComponent } from './module/product-manage-form/product
 import { CartComponent } from './module/cart/cart.component';
 import { SharedModule } from './shared/shared.module';
 import { FeatureModule } from './features/feature.module';
-import { ProductListModule } from './features/product-list/product-list.module';
-
+import { EditProductModule } from './module/edit-product/edit-product.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +22,11 @@ import { ProductListModule } from './features/product-list/product-list.module';
   ],
   imports: [
     BrowserModule,
+    EditProductModule,
+    AppRoutingModule,
     HttpClientModule,
     SharedModule,
     FeatureModule,
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

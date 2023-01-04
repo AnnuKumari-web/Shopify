@@ -30,8 +30,23 @@ export class ProductListComponent implements OnInit {
       this.inputText = value;
       this.filteredList = this.productList.filter((product: Product)=>
         product.title.toLocaleLowerCase().indexOf(value) !== -1)
-      
-      console.log(this.filteredList);
     })
+  }
+
+  // Implemented TrackBy
+  refresh(){
+    this.productListService.getProducts().subscribe({
+      next: (products) =>{
+        this.productList = products;
+        this.filteredList = products; 
+      },
+      error: (response)=>{
+        console.log(response);
+      }
+    });
+  }
+
+  trackByTitle(index: number, item: Product){
+    return item.title;
   }
 }

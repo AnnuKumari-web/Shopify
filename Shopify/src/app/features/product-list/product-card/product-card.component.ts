@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../../cart.service';
 import { SearchInputService } from 'src/app/shared/services/search-input.service';
 import { Product } from '../models/product.model';
+import { Constants } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-product-card',
@@ -10,10 +11,11 @@ import { Product } from '../models/product.model';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!:Product;
-  color1='#73C2FB';
-  color2='#FFFFFF';
-  border='2px solid #1F75FE';
   searchText: string='';
+  constant = Constants;
+  color1=this.constant.blue;
+  color2=this.constant.white;
+  border=this.constant.border;
   constructor(private cartService: CartService,private inputService: SearchInputService) { }
 
   ngOnInit(): void {

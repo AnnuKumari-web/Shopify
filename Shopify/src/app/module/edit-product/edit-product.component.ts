@@ -50,6 +50,10 @@ export class EditProductComponent implements OnInit {
       });
   }
 
+  saveChanges(){
+    alert('Your changes have been saved successfully.');
+  }
+
   deleteProduct(id: string) {
     alert('Do you want this product to get deleted?');
     this._productListService.deleteProduct(id).subscribe({

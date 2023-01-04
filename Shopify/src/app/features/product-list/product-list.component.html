@@ -1,17 +1,28 @@
-<app-card-top></app-card-top>
-  
+<app-card-top>
   <div class="container">
-    <div class="d-flex flex-row flex-wrap" *ngIf="productList && productList.length > 0">
-      <ng-container *ngFor="let item of productList | filter: inputText" >
-        <app-product-card [product]="item"></app-product-card>
-      </ng-container>
-    </div>
-    <div>
-      <p *ngIf="!productList || productList.length <= 0">
-        <br />
-        <br />
-        <strong>Loading...</strong>
-        No Products to Display...
-      </p>
-    </div>
+    <button class="btn btn-primary mt-4 " (click)="refresh()">Refresh</button>
   </div>
+  
+</app-card-top>
+
+<div class="container">
+  <div
+    class="d-flex flex-row flex-wrap"
+    *ngIf="productList && productList.length > 0"
+  >
+    <ng-container
+      *ngFor="let item of productList| filter : inputText; trackBy: trackByTitle "
+    >
+      <app-product-card [product]="item"></app-product-card>
+    </ng-container>
+  </div>
+  <div>
+    <p *ngIf="!productList || productList.length <= 0">
+      <br />
+      <br />
+      <strong>Loading...</strong>
+      No Products to Display...
+    </p>
+  </div>
+</div>
+

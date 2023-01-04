@@ -9,7 +9,6 @@ import { SearchInputService } from './shared/services/search-input.service';
   providers: [SearchInputService]
 })
 export class AppComponent {
-  title = 'Shopify';
 
   constructor(private searchInputService: SearchInputService){
 

@@ -4,14 +4,24 @@ import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-  },
-  {
     path: 'products',
     loadChildren: () =>
       import('./features/product-list/product-list.module').then(
         (m) => m.ProductListModule),
+  },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
+  {
+    path: '',
+    component: HomeComponent,
+  },
+
+  {
+    path: '**',
+    component: HomeComponent,
   },
 ];
 
